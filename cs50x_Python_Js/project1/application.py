@@ -4,6 +4,7 @@ from flask import Flask, session, render_template
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from flask_wtf import FlaskForm
 
 app = Flask(__name__)
 
@@ -20,7 +21,7 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-
+# Set up routes
 @app.route("/")
 def index():
     return render_template("index.html", title="Home")
