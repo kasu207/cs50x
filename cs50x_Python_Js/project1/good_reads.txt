@@ -1,0 +1,5 @@
+key: OqbXCVAbsqN7HmGIBICuAw
+secret: tzc6X42ESOnTGUiM4qZLAEGNCmr2yMlUNoGcyYk
+
+res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "OqbXCVAbsqN7HmGIBICuAw", "isbns": "9781632168146"})
+print(res.json())
